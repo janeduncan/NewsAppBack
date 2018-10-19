@@ -25,4 +25,4 @@ For the front end of the website, users should be able to:
 - Track how many times an article has been read, and display a list of most popular articles
 - _Paginate_ your article list - display a certain number of articles per page, with a page number, and navigation to go to the next and previous page
 
-And other any extensions you would like to add.
+And other any extensions you would like to add.  
