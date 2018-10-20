@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "categories")
-public class ArticleCategory {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,12 +27,12 @@ public class ArticleCategory {
     )
     private List<Article> articles;
 
-    public ArticleCategory(CategoryType category) {
+    public Category(CategoryType category) {
         this.category = category;
         this.articles = new ArrayList<>();
     }
 
-    public ArticleCategory() {
+    public Category() {
     }
 
     public Long getId() {
@@ -58,4 +58,9 @@ public class ArticleCategory {
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
+
+    public void addArticle(Article article) {
+        this.articles.add(article);
+    }
+
 }
