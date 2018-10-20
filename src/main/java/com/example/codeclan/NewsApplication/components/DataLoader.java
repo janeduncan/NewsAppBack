@@ -1,7 +1,7 @@
 package com.example.codeclan.NewsApplication.components;
-import com.example.codeclan.NewsApplication.models.Article;
-import com.example.codeclan.NewsApplication.models.Journalist;
+import com.example.codeclan.NewsApplication.models.*;
 import com.example.codeclan.NewsApplication.repositories.articles.ArticleRepository;
+import com.example.codeclan.NewsApplication.repositories.categories.CategoryRepository;
 import com.example.codeclan.NewsApplication.repositories.journalists.JournalistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -21,6 +21,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     JournalistRepository journalistRepository;
 
+    @Autowired
+    CategoryRepository categoryRepository;
+
     public DataLoader() {
     }
 
@@ -35,29 +38,62 @@ public class DataLoader implements ApplicationRunner {
             e.printStackTrace();
         }
 
-        Journalist journalist1 = new Journalist("Jane", "Duncan", "Political editor");
+        // JOURNALISTS
+
+        Journalist journalist1 = new Journalist("Jane Duncan", "Political Editor", "Glasgow", "07790556033", "janeduncan@live.co.uk");
         journalistRepository.save(journalist1);
 
-        Journalist journalist2 = new Journalist("Fiona", "Wilson", "Tech editor");
+        Journalist journalist2 = new Journalist("Fiona Wilson", "Tech Editor", "Glasgow", "07000000000", "fionasemail@address.com");
         journalistRepository.save(journalist2);
 
-        Journalist journalist3 = new Journalist("Ricky", "Corrigan", "Sports editor");
-        journalistRepository.save(journalist3);
+        // CATEGORIES
 
-        Journalist journalist4 = new Journalist("Christian", "Geib", "Business editor");
-        journalistRepository.save(journalist4);
+        Category politicsCategory = new Category(CategoryType.POLITICS);
+        categoryRepository.save(politicsCategory);
 
-        Article article1 = new Article(date, "Facebook hires Nick Clegg as head of global affairs", journalist1);
+        Category businessCategory = new Category(CategoryType.BUSINESS);
+        categoryRepository.save(businessCategory);
+
+        Category techCategory = new Category(CategoryType.TECHNOLOGY);
+        categoryRepository.save(techCategory);
+
+        Category ukNewsCategory = new Category(CategoryType.UKNEWS);
+        categoryRepository.save(ukNewsCategory);
+
+        // ARTICLES
+
+        Article article1 = new Article(date, Region.SCOTLAND, "Title", "Article", "Image URL", journalist1);
+        articleRepository.save(article1);
+        article1.addCategory(politicsCategory);
+        article1.setJournalist(journalist1);
         articleRepository.save(article1);
 
-        Article article2 = new Article(date, "Chinese search firm Baidu joins global AI ethics body", journalist2);
+        Article article2 = new Article(date, Region.LONDON, "Title", "Article", "Image URL", journalist1);
+        articleRepository.save(article2);
+        article2.addCategory(ukNewsCategory);
+        article2.setJournalist(journalist1);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date, "The 10 most improved players in the Premier League", journalist3);
+        Article article3 = new Article(date, Region.SOUTHEASTENGLAND, "Title", "Article", "Image URL", journalist1);
+        articleRepository.save(article3);
+        article3.addCategory(politicsCategory);
+        article3.addCategory(ukNewsCategory);
+        article3.setJournalist(journalist1);
         articleRepository.save(article3);
 
-        Article article4 = new Article(date, "Scottish Power to invest in solar for first time", journalist4);
+        Article article4 = new Article(date, Region.WALES, "Title", "Article", "Image URL", journalist2);
         articleRepository.save(article4);
+        article4.addCategory(techCategory);
+        article4.addCategory(businessCategory);
+        article4.setJournalist(journalist2);
+        articleRepository.save(article4);
+
+        Article article5 = new Article(date, Region.WESTMIDLANDS, "Title", "Article", "Image URL", journalist2);
+        articleRepository.save(article5);
+        article5.addCategory(techCategory);
+        article5.addCategory(ukNewsCategory);
+        article5.setJournalist(journalist2);
+        articleRepository.save(article5);
 
     }
 }
