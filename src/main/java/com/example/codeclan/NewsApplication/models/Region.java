@@ -20,8 +20,7 @@ public enum Region {
         this.region = region;
     }
 
-    public String getRegion() {
+    public String getRegionValue() {
         return region;
     }
-
 }
