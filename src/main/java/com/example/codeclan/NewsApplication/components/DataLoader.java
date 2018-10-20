@@ -57,7 +57,7 @@ public class DataLoader implements ApplicationRunner {
         Category techCategory = new Category(CategoryType.TECHNOLOGY);
         categoryRepository.save(techCategory);
 
-        Category ukNewsCategory = new Category(CategoryType.UKNEWS);
+        Category ukNewsCategory = new Category(CategoryType.UK);
         categoryRepository.save(ukNewsCategory);
 
         // ARTICLES
@@ -74,7 +74,7 @@ public class DataLoader implements ApplicationRunner {
         article2.setJournalist(journalist1);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date, Region.SOUTHEASTENGLAND, "Title", "Article", "Image URL", journalist1);
+        Article article3 = new Article(date, Region.SOUTHEAST, "Title", "Article", "Image URL", journalist1);
         articleRepository.save(article3);
         article3.addCategory(politicsCategory);
         article3.addCategory(ukNewsCategory);
