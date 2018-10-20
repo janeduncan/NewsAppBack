@@ -3,15 +3,15 @@ package com.example.codeclan.NewsApplication.models;
 public enum Region {
 
     SCOTLAND,
-    NORTHWESTENGLAND,
-    NORTHEASTENGLAND,
+    NORTHWEST,
+    NORTHEAST,
     YORKSHIRE,
     WALES,
     WESTMIDLANDS,
     EASTMIDLANDS,
-    EASTENGLAND,
+    EAST,
     LONDON,
-    SOUTHWESTENGLAND,
-    SOUTHEASTENGLAND;
+    SOUTHWEST,
+    SOUTHEAST;
 
 }

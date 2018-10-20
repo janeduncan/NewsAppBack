@@ -6,9 +6,8 @@ public enum CategoryType {
     SPORTS,
     TECHNOLOGY,
     BUSINESS,
-    LOCALNEWS,
-    WORLDNEWS,
-    UKNEWS,
+    WORLD,
+    UK,
     ENVIRONMENT,
     CELEBRITY,
     EDUCATION;
