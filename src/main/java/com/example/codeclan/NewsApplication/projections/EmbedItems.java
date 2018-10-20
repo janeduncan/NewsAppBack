@@ -11,7 +11,7 @@ public interface EmbedItems {
     long getId();
     String getTitle();
     Date getDate();
-    Region getRegion();
+    String getRegion();
     List<Category> getCategories();
     Journalist getJournalist();
 }
