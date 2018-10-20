@@ -1,7 +1,6 @@
 package com.example.codeclan.NewsApplication.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jdk.jfr.Category;
 import org.hibernate.annotations.Cascade;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,6 +18,9 @@ public class Article implements Serializable {
 
     @Column(name = "date")
     private Date date;
+
+    @Column(name = "region")
+    private Region region;
 
     @JsonIgnoreProperties("articles")
     @ManyToMany
@@ -44,13 +46,14 @@ public class Article implements Serializable {
     @JoinColumn(name = "journalist_id", nullable = false)
     private Journalist journalist;
 
-    public Article(Date date, String title, Journalist journalist) {
+    public Article(Date date, Region region, String title,  String text, String image, Journalist journalist) {
         this.date = date;
-        this.categories = new ArrayList<>();
+        this.region = region;
         this.title = title;
-        this.image = "";
-        this.text = "";
+        this.image = image;
+        this.text = text;
         this.journalist = journalist;
+        this.categories = new ArrayList<>();
     }
 
     public Article() {
@@ -70,6 +73,14 @@ public class Article implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 
     public List<Category> getCategories() {
@@ -110,6 +121,10 @@ public class Article implements Serializable {
 
     public void setJournalist(Journalist journalist) {
         this.journalist = journalist;
+    }
+
+    public void addCategory(Category category){
+        this.categories.add(category);
     }
 
 }
