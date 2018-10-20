@@ -1,5 +1,5 @@
 package com.example.codeclan.NewsApplication.models;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +22,6 @@ public class Journalist implements Serializable {
     @Column(name = "field")
     private String field;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "journalist", fetch = FetchType.LAZY)
     private List<Article> articles;
 

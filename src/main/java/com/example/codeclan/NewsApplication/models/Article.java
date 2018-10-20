@@ -1,10 +1,13 @@
 package com.example.codeclan.NewsApplication.models;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jdk.jfr.Category;
+import org.hibernate.annotations.Cascade;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "articles")
@@ -17,8 +20,15 @@ public class Article implements Serializable {
     @Column(name = "date")
     private Date date;
 
-    // Separate table?
-    private ArticleCategory category;
+    @JsonIgnoreProperties("articles")
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "articles_categories",
+            joinColumns = {@JoinColumn(name = "article_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="category_id", nullable = false, updatable = false)}
+    )
+    private List<Category> categories;
 
     @Column(name = "title")
     private String title;
@@ -34,9 +44,9 @@ public class Article implements Serializable {
     @JoinColumn(name = "journalist_id", nullable = false)
     private Journalist journalist;
 
-    public Article(Date date, ArticleCategory category, String title, Journalist journalist) {
+    public Article(Date date, String title, Journalist journalist) {
         this.date = date;
-        this.category = category;
+        this.categories = new ArrayList<>();
         this.title = title;
         this.image = "";
         this.text = "";
@@ -62,12 +72,12 @@ public class Article implements Serializable {
         this.date = date;
     }
 
-    public ArticleCategory getCategory() {
-        return category;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(ArticleCategory category) {
-        this.category = category;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 
     public String getTitle() {
