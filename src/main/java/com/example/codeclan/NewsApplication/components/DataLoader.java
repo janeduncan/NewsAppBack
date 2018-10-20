@@ -1,6 +1,5 @@
 package com.example.codeclan.NewsApplication.components;
 import com.example.codeclan.NewsApplication.models.Article;
-import com.example.codeclan.NewsApplication.models.ArticleCategory;
 import com.example.codeclan.NewsApplication.models.Journalist;
 import com.example.codeclan.NewsApplication.repositories.articles.ArticleRepository;
 import com.example.codeclan.NewsApplication.repositories.journalists.JournalistRepository;
@@ -48,16 +47,16 @@ public class DataLoader implements ApplicationRunner {
         Journalist journalist4 = new Journalist("Christian", "Geib", "Business editor");
         journalistRepository.save(journalist4);
 
-        Article article1 = new Article(date, ArticleCategory.POLITICS, "Facebook hires Nick Clegg as head of global affairs", journalist1);
+        Article article1 = new Article(date, "Facebook hires Nick Clegg as head of global affairs", journalist1);
         articleRepository.save(article1);
 
-        Article article2 = new Article(date, ArticleCategory.TECHNOLOGY, "Chinese search firm Baidu joins global AI ethics body", journalist2);
+        Article article2 = new Article(date, "Chinese search firm Baidu joins global AI ethics body", journalist2);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date, ArticleCategory.SPORTS, "The 10 most improved players in the Premier League", journalist3);
+        Article article3 = new Article(date, "The 10 most improved players in the Premier League", journalist3);
         articleRepository.save(article3);
 
-        Article article4 = new Article(date, ArticleCategory.BUSINESS, "Scottish Power to invest in solar for first time", journalist4);
+        Article article4 = new Article(date, "Scottish Power to invest in solar for first time", journalist4);
         articleRepository.save(article4);
 
     }
