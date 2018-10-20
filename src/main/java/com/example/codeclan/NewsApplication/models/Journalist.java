@@ -13,22 +13,30 @@ public class Journalist implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "job_title")
+    private String jobTitle;
 
-    @Column(name = "field")
-    private String field;
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "email")
+    private String email;
 
     @OneToMany(mappedBy = "journalist", fetch = FetchType.LAZY)
     private List<Article> articles;
 
-    public Journalist(String firstName, String lastName, String field) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.field = field;
+    public Journalist(String name, String jobTitle, String location, String phoneNumber, String email) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.location = location;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.articles = new ArrayList<>();
     }
 
@@ -43,28 +51,44 @@ public class Journalist implements Serializable {
         Id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public String getField() {
-        return field;
+    public String getLocation() {
+        return location;
     }
 
-    public void setField(String field) {
-        this.field = field;
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public List<Article> getArticles() {
