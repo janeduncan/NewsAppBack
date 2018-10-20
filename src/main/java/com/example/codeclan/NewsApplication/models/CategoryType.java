@@ -2,14 +2,24 @@ package com.example.codeclan.NewsApplication.models;
 
 public enum CategoryType {
 
-    POLITICS,
-    SPORTS,
-    TECHNOLOGY,
-    BUSINESS,
-    WORLD,
-    UK,
-    ENVIRONMENT,
-    CELEBRITY,
-    EDUCATION;
+    POLITICS("Politics"),
+    SPORTS("Sports"),
+    TECHNOLOGY("Technology"),
+    BUSINESS("Business"),
+    WORLD("World"),
+    UK("UK"),
+    ENVIRONMENT("Environment"),
+    CELEBRITY("Celebrity"),
+    EDUCATION("Education");
+
+    private String category;
+
+    CategoryType(String category) {
+        this.category = category;
+    }
+
+    public String getCategoryValue() {
+        return category;
+    }
 
 }
