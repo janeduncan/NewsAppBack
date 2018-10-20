@@ -76,7 +76,7 @@ public class Article implements Serializable {
     }
 
     public String getRegion() {
-        return region.getRegion();
+        return region.getRegionValue();
     }
 
     public void setRegion(Region region) {
