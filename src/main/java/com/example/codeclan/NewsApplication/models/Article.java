@@ -75,8 +75,8 @@ public class Article implements Serializable {
         this.date = date;
     }
 
-    public Region getRegion() {
-        return region;
+    public String getRegion() {
+        return region.getRegion();
     }
 
     public void setRegion(Region region) {
