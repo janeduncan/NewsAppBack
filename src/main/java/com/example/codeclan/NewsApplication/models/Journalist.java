@@ -28,15 +28,19 @@ public class Journalist implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "image")
+    private String image;
+
     @OneToMany(mappedBy = "journalist", fetch = FetchType.LAZY)
     private List<Article> articles;
 
-    public Journalist(String name, String jobTitle, String location, String phoneNumber, String email) {
+    public Journalist(String name, String jobTitle, String location, String phoneNumber, String email, String image) {
         this.name = name;
         this.jobTitle = jobTitle;
         this.location = location;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.image = image;
         this.articles = new ArrayList<>();
     }
 
@@ -103,4 +107,11 @@ public class Journalist implements Serializable {
         this.articles.add(article);
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
