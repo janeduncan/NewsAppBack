@@ -23,5 +23,4 @@ public enum Region {
     public String getRegionValue() {
         return region;
     }
-
 }

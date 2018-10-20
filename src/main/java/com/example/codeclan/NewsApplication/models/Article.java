@@ -75,20 +75,20 @@ public class Article implements Serializable {
         this.date = date;
     }
 
-    public String getRegion() {
-        return region.getRegionValue();
-    }
-
-    public void setRegion(Region region) {
-        this.region = region;
-    }
-
     public List<Category> getCategories() {
         return categories;
     }
 
     public void setCategories(List<Category> categories) {
         this.categories = categories;
+    }
+
+    public String getRegion() {
+        return region.getRegionValue();
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 
     public String getTitle() {
