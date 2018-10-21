@@ -40,11 +40,17 @@ public class DataLoader implements ApplicationRunner {
 
         // JOURNALISTS
 
-        Journalist journalist1 = new Journalist("Jane Duncan", "Political Editor", "Glasgow", "07790556033", "janeduncan@live.co.uk", "/images/merlin.jpg");
+        Journalist journalist1 = new Journalist("Jane Duncan", "Political Editor", "Glasgow", "07790556033", "janeduncan@live.co.uk", "/images/staff1.jpg");
         journalistRepository.save(journalist1);
 
-        Journalist journalist2 = new Journalist("Fiona Wilson", "Tech Editor", "Glasgow", "07000000000", "fionasemail@address.com", "/images/merlin.jpg");
+        Journalist journalist2 = new Journalist("Fiona Wilson", "Tech Editor", "Glasgow", "07000000000", "fionasemail@address.com", "/images/staff2.jpg");
         journalistRepository.save(journalist2);
+
+        Journalist journalist3 = new Journalist("Ricky Corrigan", "Sports Editor", "Glasgow", "07000000000", "rickysemail@address.com", "/images/staff3.jpg");
+        journalistRepository.save(journalist3);
+
+        Journalist journalist4 = new Journalist("Christian Geib", "Business Editor", "Glasgow", "07000000000", "christiansemail@address.com", "/images/staff4.jpg");
+        journalistRepository.save(journalist4);
 
         // CATEGORIES
 
