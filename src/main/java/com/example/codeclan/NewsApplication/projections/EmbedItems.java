@@ -15,4 +15,5 @@ public interface EmbedItems {
     String getRegion();
     List<Category> getCategories();
     Journalist getJournalist();
+    String getImage();
 }

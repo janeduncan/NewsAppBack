@@ -38,6 +38,9 @@ public class Article implements Serializable {
     @Column(name = "image")
     private String image;
 
+    @Column(name = "summary")
+    private String summary;
+
     @Column(name = "text")
     private String text;
 
@@ -46,11 +49,12 @@ public class Article implements Serializable {
     @JoinColumn(name = "journalist_id", nullable = false)
     private Journalist journalist;
 
-    public Article(Date date, Region region, String title,  String text, String image, Journalist journalist) {
+    public Article(Date date, Region region, String title, String summary, String text, String image, Journalist journalist) {
         this.date = date;
         this.region = region;
         this.title = title;
         this.image = image;
+        this.summary = summary;
         this.text = text;
         this.journalist = journalist;
         this.categories = new ArrayList<>();
@@ -105,6 +109,14 @@ public class Article implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getText() {
