@@ -104,33 +104,33 @@ public class DataLoader implements ApplicationRunner {
 
         // ARTICLES
 
-        Article article1 = new Article(date1, Region.SCOTLAND, "Phasellus in molestie dolor, posuere pellentesque nisi.", "Article", "Image URL", journalist1);
+        Article article1 = new Article(date1, Region.SCOTLAND, "Phasellus in molestie dolor, posuere pellentesque nisi.", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article1);
         article1.addCategory(politicsCategory);
         article1.setJournalist(journalist1);
         articleRepository.save(article1);
 
-        Article article2 = new Article(date2, Region.LONDON, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Article", "Image URL", journalist1);
+        Article article2 = new Article(date2, Region.LONDON, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article2);
         article2.addCategory(ukNewsCategory);
         article2.setJournalist(journalist1);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date3, Region.SOUTHEAST, "Phasellus placerat tellus ut rhoncus consequat.", "Article", "Image URL", journalist1);
+        Article article3 = new Article(date3, Region.SOUTHEAST, "Phasellus placerat tellus ut rhoncus consequat.", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article3);
         article3.addCategory(politicsCategory);
         article3.addCategory(ukNewsCategory);
         article3.setJournalist(journalist1);
         articleRepository.save(article3);
 
-        Article article4 = new Article(date4, Region.WALES, "Integer consectetur tellus sed ipsum hendrerit consectetur. ", "Article", "Image URL", journalist2);
+        Article article4 = new Article(date4, Region.WALES, "Integer consectetur tellus sed ipsum hendrerit consectetur. ", "Article", "/images/image.jpg", journalist2);
         articleRepository.save(article4);
         article4.addCategory(techCategory);
         article4.addCategory(businessCategory);
         article4.setJournalist(journalist2);
         articleRepository.save(article4);
 
-        Article article5 = new Article(date5, Region.WESTMIDLANDS, "Ut fermentum nisi et placerat varius. Aliquam et.", "Article", "Image URL", journalist2);
+        Article article5 = new Article(date5, Region.WESTMIDLANDS, "Ut fermentum nisi et placerat varius. Aliquam et.", "Article", "/images/image.jpg", journalist2);
         articleRepository.save(article5);
         article5.addCategory(techCategory);
         article5.addCategory(ukNewsCategory);

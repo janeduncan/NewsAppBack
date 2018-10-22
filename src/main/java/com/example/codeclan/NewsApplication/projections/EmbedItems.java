@@ -10,6 +10,7 @@ import java.util.List;
 public interface EmbedItems {
     long getId();
     String getTitle();
+    String getText();
     Date getDate();
     String getRegion();
     List<Category> getCategories();
