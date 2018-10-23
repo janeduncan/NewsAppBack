@@ -14,8 +14,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "category")
-    private CategoryType category;
+    @Column(name="name")
+    private String name;
 
     @JsonIgnoreProperties("categories")
     @ManyToMany
@@ -27,8 +27,8 @@ public class Category {
     )
     private List<Article> articles;
 
-    public Category(CategoryType category) {
-        this.category = category;
+    public Category(String name) {
+        this.name = name;
         this.articles = new ArrayList<>();
     }
 
@@ -43,14 +43,6 @@ public class Category {
         Id = id;
     }
 
-    public CategoryType getCategory() {
-        return category;
-    }
-
-    public void setCategory(CategoryType category) {
-        this.category = category;
-    }
-
     public List<Article> getArticles() {
         return articles;
     }
@@ -63,4 +55,11 @@ public class Category {
         this.articles.add(article);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

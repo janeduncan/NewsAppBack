@@ -19,7 +19,9 @@ public class Article implements Serializable {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "region")
+    @JsonIgnoreProperties("articles")
+    @ManyToOne
+    @JoinColumn(name = "region_id", nullable = false)
     private Region region;
 
     @JsonIgnoreProperties("articles")
@@ -87,8 +89,8 @@ public class Article implements Serializable {
         this.categories = categories;
     }
 
-    public String getRegion() {
-        return region.getRegionValue();
+    public Region getRegion() {
+        return region;
     }
 
     public void setRegion(Region region) {
