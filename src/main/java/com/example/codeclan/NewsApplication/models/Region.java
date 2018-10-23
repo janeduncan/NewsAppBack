@@ -1,26 +1,53 @@
 package com.example.codeclan.NewsApplication.models;
 
-public enum Region {
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-    SCOTLAND("Scotland"),
-    NORTHWEST("North West"),
-    NORTHEAST("North East"),
-    YORKSHIRE("Yorkshire"),
-    WALES("Wales"),
-    WESTMIDLANDS("West Midlands"),
-    EASTMIDLANDS("East Midlands"),
-    EAST("East"),
-    LONDON("London"),
-    SOUTHWEST("South West"),
-    SOUTHEAST("South East");
+@Entity
+@Table(name = "regions")
+public class Region {
 
-    private String region;
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
-    Region(String region) {
-        this.region = region;
+    @Column(name="name")
+    private String name;
+
+    @OneToMany(mappedBy = "region", fetch = FetchType.LAZY)
+    private List<Article> articles;
+
+    public Region(String name) {
+        this.name = name;
+        this.articles = new ArrayList<>();
     }
 
-    public String getRegionValue() {
-        return region;
+    public Region(){
+
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 }

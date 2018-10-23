@@ -3,6 +3,8 @@ import com.example.codeclan.NewsApplication.models.*;
 import com.example.codeclan.NewsApplication.repositories.articles.ArticleRepository;
 import com.example.codeclan.NewsApplication.repositories.categories.CategoryRepository;
 import com.example.codeclan.NewsApplication.repositories.journalists.JournalistRepository;
+import com.example.codeclan.NewsApplication.repositories.regions.RegionRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -23,6 +25,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     CategoryRepository categoryRepository;
+
+    @Autowired
+    RegionRepository regionRepository;
 
     public DataLoader() {
     }
@@ -90,47 +95,90 @@ public class DataLoader implements ApplicationRunner {
 
         // CATEGORIES
 
-        Category politicsCategory = new Category(CategoryType.POLITICS);
+        Category politicsCategory = new Category("Politics");
         categoryRepository.save(politicsCategory);
 
-        Category businessCategory = new Category(CategoryType.BUSINESS);
+        Category businessCategory = new Category("Business");
         categoryRepository.save(businessCategory);
 
-        Category techCategory = new Category(CategoryType.TECHNOLOGY);
+        Category techCategory = new Category("Technology");
         categoryRepository.save(techCategory);
 
-        Category ukNewsCategory = new Category(CategoryType.UK);
+        Category ukNewsCategory = new Category("UK");
         categoryRepository.save(ukNewsCategory);
+
+        Category sportsCategory = new Category("Sports");
+        categoryRepository.save(sportsCategory);
+
+        Category worldCategory = new Category("World");
+        categoryRepository.save(worldCategory);
+
+        Category environmentCategory = new Category("Environment");
+        categoryRepository.save(environmentCategory);
+
+        Category celebrityCategory = new Category("Celebrity");
+        categoryRepository.save(celebrityCategory);
+
+        Category educationCategory = new Category("Education");
+        categoryRepository.save(educationCategory);
+
+        // REGIONS
+
+        Region scotland = new Region("Scotland");
+        Region northWest = new Region("North West");
+        Region northEast = new Region("North East");
+        Region yorkshire = new Region("Yorkshire");
+        Region wales = new Region("Wales");
+        Region westMidlands = new Region("West Midlands");
+        Region eastMidlands = new Region("East Midlands");
+        Region east = new Region("East");
+        Region london = new Region("London");
+        Region southWest = new Region("South West");
+        Region southEast = new Region("South East");
+
+        regionRepository.save(scotland);
+        regionRepository.save(northWest);
+        regionRepository.save(northEast);
+        regionRepository.save(yorkshire);
+        regionRepository.save(wales);
+        regionRepository.save(westMidlands);
+        regionRepository.save(eastMidlands);
+        regionRepository.save(east);
+        regionRepository.save(london);
+        regionRepository.save(southWest);
+        regionRepository.save(southEast);
+
+
 
         // ARTICLES
 
-        Article article1 = new Article(date1, Region.SCOTLAND, "Title", "Summary", "Article", "/images/image.jpg", journalist1);
+        Article article1 = new Article(date1, scotland, "Title", "Summary", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article1);
         article1.addCategory(politicsCategory);
         article1.setJournalist(journalist1);
         articleRepository.save(article1);
 
-        Article article2 = new Article(date2, Region.LONDON, "Title","Summary", "Article", "/images/image.jpg", journalist1);
+        Article article2 = new Article(date2, london, "Title","Summary", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article2);
         article2.addCategory(ukNewsCategory);
         article2.setJournalist(journalist1);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date3, Region.SOUTHEAST, "Title","Summary", "Article", "/images/image.jpg", journalist1);
+        Article article3 = new Article(date3, southEast, "Title","Summary", "Article", "/images/image.jpg", journalist1);
         articleRepository.save(article3);
         article3.addCategory(politicsCategory);
         article3.addCategory(ukNewsCategory);
         article3.setJournalist(journalist1);
         articleRepository.save(article3);
 
-        Article article4 = new Article(date4, Region.WALES, "Title","Summary", "Article", "/images/image.jpg", journalist2);
+        Article article4 = new Article(date4, wales, "Title","Summary", "Article", "/images/image.jpg", journalist2);
         articleRepository.save(article4);
         article4.addCategory(techCategory);
         article4.addCategory(businessCategory);
         article4.setJournalist(journalist2);
         articleRepository.save(article4);
 
-        Article article5 = new Article(date5, Region.WESTMIDLANDS, "Title","Summary", "Article", "/images/image.jpg", journalist2);
+        Article article5 = new Article(date5, westMidlands, "Title","Summary", "Article", "/images/image.jpg", journalist2);
         articleRepository.save(article5);
         article5.addCategory(techCategory);
         article5.addCategory(ukNewsCategory);
