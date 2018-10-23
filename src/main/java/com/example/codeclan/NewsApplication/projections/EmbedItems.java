@@ -12,7 +12,7 @@ public interface EmbedItems {
     String getTitle();
     String getText();
     Date getDate();
-    String getRegion();
+    Region getRegion();
     List<Category> getCategories();
     Journalist getJournalist();
     String getImage();
