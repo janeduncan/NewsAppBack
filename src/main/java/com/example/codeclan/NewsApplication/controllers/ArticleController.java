@@ -15,7 +15,7 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepository;
 
-    @GetMapping
+    @GetMapping(value = "/")
     public List<Article> getAllArticles(){
         return articleRepository.findAll();
     }
