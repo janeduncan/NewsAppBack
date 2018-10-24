@@ -152,38 +152,45 @@ public class DataLoader implements ApplicationRunner {
 
         // ARTICLES
 
-        Article article1 = new Article(date1, scotland, "Title", "Summary", "Article", "/images/image.jpg", journalist1);
+        Article article1 = new Article(date1, scotland, "Plastic particles found in human digestive systems", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article1.jpg", journalist1);
         articleRepository.save(article1);
         article1.addCategory(politicsCategory);
         article1.setJournalist(journalist1);
         articleRepository.save(article1);
 
-        Article article2 = new Article(date2, london, "Title","Summary", "Article", "/images/image.jpg", journalist1);
+        Article article2 = new Article(date2, london, "Passing Brexit laws in time is ‘impossible job’ for parliament","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article2.jpg", journalist1);
         articleRepository.save(article2);
         article2.addCategory(ukNewsCategory);
         article2.setJournalist(journalist1);
         articleRepository.save(article2);
 
-        Article article3 = new Article(date3, southEast, "Title","Summary", "Article", "/images/image.jpg", journalist1);
+        Article article3 = new Article(date3, southEast, "Mohammed bin Salman skips summit as Erdogan accuses Saudis of ‘murder’","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article3.jpg", journalist1);
         articleRepository.save(article3);
         article3.addCategory(politicsCategory);
         article3.addCategory(ukNewsCategory);
         article3.setJournalist(journalist1);
         articleRepository.save(article3);
 
-        Article article4 = new Article(date4, wales, "Title","Summary", "Article", "/images/image.jpg", journalist2);
+        Article article4 = new Article(date4, wales, "The party factions who could topple their leader","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article4.jpg", journalist2);
         articleRepository.save(article4);
         article4.addCategory(techCategory);
         article4.addCategory(businessCategory);
         article4.setJournalist(journalist2);
         articleRepository.save(article4);
 
-        Article article5 = new Article(date5, westMidlands, "Title","Summary", "Article", "/images/image.jpg", journalist2);
+        Article article5 = new Article(date5, westMidlands, "United still yearn for the remarkable quality of superstar","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article5.jpg", journalist2);
         articleRepository.save(article5);
         article5.addCategory(techCategory);
         article5.addCategory(ukNewsCategory);
         article5.setJournalist(journalist2);
         articleRepository.save(article5);
+
+        Article article6 = new Article(date5, westMidlands, "Excluding autistic pupils breaches human rights","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article6.jpg", journalist2);
+        articleRepository.save(article6);
+        article5.addCategory(educationCategory);
+        article5.addCategory(ukNewsCategory);
+        article5.setJournalist(journalist2);
+        articleRepository.save(article6);
 
     }
 }

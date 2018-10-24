@@ -25,5 +25,4 @@ public class NewsApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
 }
