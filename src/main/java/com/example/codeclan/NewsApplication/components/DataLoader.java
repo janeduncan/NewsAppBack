@@ -185,12 +185,12 @@ public class DataLoader implements ApplicationRunner {
         article5.setJournalist(journalist2);
         articleRepository.save(article5);
 
-        Article article6 = new Article(date5, westMidlands, "Excluding autistic pupils breaches human rights","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article6.jpg", journalist2);
-        articleRepository.save(article6);
-        article5.addCategory(educationCategory);
-        article5.addCategory(ukNewsCategory);
-        article5.setJournalist(journalist2);
-        articleRepository.save(article6);
+//        Article article6 = new Article(date5, westMidlands, "Excluding autistic pupils breaches human rights","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tortor tortor. Sed rhoncus malesuada lorem, nec mollis lacus consequat a. Duis quis fermentum metus, in lobortis libero. Nunc lobortis posuere eleifend.", "Article", "/images/article6.jpg", journalist2);
+//        articleRepository.save(article6);
+//        article5.addCategory(educationCategory);
+//        article5.addCategory(ukNewsCategory);
+//        article5.setJournalist(journalist2);
+//        articleRepository.save(article6);
 
     }
 }
